@@ -10,7 +10,6 @@ const checkVisibility = () => {
   }
   return false;
 };
-console.log(checkVisibility());
 
 const snowMenu = () => {
   bodyBurger.style.display = "flex";
