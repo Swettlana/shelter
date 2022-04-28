@@ -4,6 +4,14 @@ const header = document.querySelector(".header");
 const overlay = document.querySelector(".overlay");
 const headerWrap = document.querySelector(".header__wrapper");
 
+const checkVisibility = () => {
+  if (btnBurger.offsetWidth) {
+    return true;
+  }
+  return false;
+};
+console.log(checkVisibility());
+
 const snowMenu = () => {
   bodyBurger.style.display = "flex";
   btnBurger.classList.toggle("open-menu");
@@ -27,12 +35,24 @@ bodyBurger.onanimationend = () => {
   }
 };
 
-btnBurger.onclick = snowMenu;
-bodyBurger.onclick = (e) => {
-  if (e.target.dataset) {
-    location.hash = e.target.dataset.link;
+btnBurger.onclick = () => {
+  if (checkVisibility()) {
     snowMenu();
   }
 };
-btnBurger.onclick = snowMenu;
-overlay.onclick = snowMenu;
+
+bodyBurger.onclick = (e) => {
+  if (checkVisibility()) {
+    if (e.target.dataset) {
+      location.hash = e.target.dataset.link;
+      snowMenu();
+    }
+  }
+};
+
+overlay.onclick = (e) => {
+  if (e.target.dataset) {
+    location.hash = e.target.dataset.link;
+  }
+  snowMenu();
+};
