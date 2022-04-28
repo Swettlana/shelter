@@ -1,0 +1,70 @@
+@font-face {
+  font-family: "Georgia";
+  src: url("../assets/fonts/georgia-regular.ttf");
+}
+@font-face {
+  font-family: "Arial";
+  src: url("../assets/fonts/arial-regular.ttf");
+}
+@font-face {
+  font-family: "Arial";
+  font-style: italic;
+  src: url("../assets/fonts/arial-italic.ttf");
+}
+
+section {
+  width: 100%;
+}
+body {
+  height: 100%;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+body.open-menu {
+  overflow: hidden;
+}
+.overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(41, 41, 41, 0.6);
+  z-index: 1000;
+}
+.overlay.active {
+  display: flex;
+}
+.content {
+  display: flex;
+  margin: 0 auto;
+  height: 100%;
+  max-width: 1280px;
+  box-sizing: border-box;
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .content {
+    width: 100%;
+  }
+}
+.button_full {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f1cdb3;
+  border-radius: 100px;
+  height: 52px;
+  border: none;
+  font-family: "Georgia";
+  font-size: 17px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: #292929;
+  cursor: pointer;
+}
+.button_full:hover {
+  background-color: #fddcc4;
+}
